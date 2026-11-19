@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>¿Qué tanto me conoces?</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <main class="container">
+        <div class="card">
+
+            <div class="icon">📝</div>
+
+            <h1>¿Qué tanto me conoces?</h1>
+            <p class="subtitle">
+                ¡Demuestra cuánto sabes sobre mí!
+            </p>
+
+            <div class="progress-container">
+                <div class="progress-bar" id="progress"></div>
+            </div>
+
+            <p class="progress-text" id="progressText">
+                Pregunta 1 de 7
+            </p>
+
+            <form id="quizForm">
+
+                <!-- Datos personales -->
+                <section class="step active">
+                    <h2>Antes de comenzar...</h2>
+
+                    <label for="nombre">¿Cuál es tu nombre?</label>
+                    <input type="text" id="nombre"
+                        placeholder="Escribe tu nombre" required>
+
+                    <label for="parentesco">¿Cuál es tu parentesco?</label>
+                    <input type="text" id="parentesco"
+                        placeholder="Amigo, familiar, etc." required>
+
+                    <label for="cuantos">¿Hace cuántos años me conoces?</label>
+                    <input type="number" id="cuantos"
+                        placeholder="Ejemplo: 5" min="0" required>
+
+                    <button type="button" onclick="siguiente()">
+                        Comenzar
+                    </button>
+                </section>
+
+                <!-- Edad -->
+                <section class="step">
+                    <h2>Pregunta 1</h2>
+                    <p>¿Cuál es mi edad?</p>
+
+                    <input type="number" id="edad"
+                        placeholder="Escribe tu respuesta">
+
+                    <button type="button"
+                        onclick="verificarNumero('edad', 18)">
+                        Responder
+                    </button>
+                </section>
+
+                <!-- Comida -->
+                <section class="step">
+                    <h2>Pregunta 2</h2>
+                    <p>¿Cuál es mi comida favorita?</p>
+
+                    <div class="options">
+                        <label><input type="radio" name="comida" value="1"> 🍕 Pizza</label>
+                        <label><input type="radio" name="comida" value="2"> 🍛 Bandeja paisa</label>
+                        <label><input type="radio" name="comida" value="3"> 🍜 Arroz chino</label>
+                        <label><input type="radio" name="comida" value="4"> 🐟 Mojarra</label>
+                        <label><input type="radio" name="comida" value="5"> Otro</label>
+                    </div>
+
+                    <button type="button"
+                        onclick="verificarOpcion('comida', [1,2,3])">
+                        Responder
+                    </button>
+                </section>
+
+                <!-- Estudios -->
+                <section class="step">
+                    <h2>Pregunta 3</h2>
+                    <p>¿Qué estoy realizando?</p>
+
+                    <div class="options">
+                        <label><input type="radio" name="dedicacion" value="1"> Técnico</label>
+                        <label><input type="radio" name="dedicacion" value="2"> Tecnólogo</label>
+                        <label><input type="radio" name="dedicacion" value="3"> Pase de conducción</label>
+                        <label><input type="radio" name="dedicacion" value="4"> Otro</label>
+                    </div>
+
+                    <button type="button"
+                        onclick="verificarOpcion('dedicacion', [1,2,3])">
+                        Responder
+                    </button>
+                </section>
+
+                <!-- Música -->
+                <section class="step">
+                    <h2>Pregunta 4</h2>
+                    <p>¿Cuál es mi música favorita?</p>
+
+                    <div class="options">
+                        <label><input type="radio" name="musica" value="1"> 🎶 Salsa</label>
+                        <label><input type="radio" name="musica" value="2"> 🎤 Reguetón</label>
+                        <label><input type="radio" name="musica" value="3"> 🤘 Metal</label>
+                        <label><input type="radio" name="musica" value="4"> Otro</label>
+                    </div>
+
+                    <button type="button"
+                        onclick="verificarOpcion('musica', [1,2])">
+                        Responder
+                    </button>
+                </section>
+
+                <!-- Final -->
+                <section class="step final">
+                    <div class="success-icon">🎉</div>
+                    <h2>¡Encuesta completada!</h2>
+
+                    <p id="mensajeFinal"></p>
+
+                    <p class="final-message">
+                        ¡Gracias por participar en este pequeño cuestionario!
+                    </p>
+
+                    <button type="button" onclick="location.reload()">
+                        Volver a jugar
+                    </button>
+                </section>
+
+            </form>
+
+            <p id="feedback"></p>
+
+        </div>
+
+        <footer>
+            Creado con ❤️ por mí
+        </footer>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
